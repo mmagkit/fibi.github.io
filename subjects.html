@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
+  <title>MY BSCS JOURNEY</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">📘</div>
+        <a href="index.html" aria-label="My Subjects">My Subjects</a>
+      </div>
+      <button class="menu-btn" aria-controls="primary-nav" aria-expanded="false">☰ Menu</button>
+      <nav aria-label="Primary">
+        <div id="primary-nav" class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="subjects.html" aria-current="page">Subjects</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="container">
+
+    <h1>My 1st Sem Subject - 2025</h1>
+    <p class="muted">Search and browse your subjects below:</p>
+
+    <section class="card" aria-label="Subject filters">
+      <label for="search">Search subjects</label>
+      <input id="search" type="search" placeholder="e.g., SP 101, AR 101, Programming" aria-describedby="searchHelp">
+      <div id="searchHelp" class="muted">Results update as you type.</div>
+    </section>
+
+    <section aria-live="polite" aria-busy="false">
+      <div id="subjectGrid" class="grid">
+        
+        <article class="card">
+          <h3>SP 101</h3>
+          <p class="muted">Social Issues and Professional Practice</p>
+          <button class="read-more">Read More</button>
+          <div class="desc">One aim of this subject is that students will gain necessary theoretical knowledge and skills to critically analyze ethical dilemma, evaluate alternatives, and communicate all stakeholders the decision taken in a convincing manner</div>
+        </article>
+
+        <article class="card">
+          <h3>AR 101</h3>
+          <p class="muted">Architecture and Organization</p>
+          <button class="read-more">Read More</button>
+          <div class="desc">This subject discusses on how to develop a deeper understanding of the hardware environment upon which all computing is based, and the interface it provides to higher softwarelayers.</div>
+        </article>
+
+        <article class="card">
+          <h3>AL 102</h3>
+          <p class="muted">Automata Theory and Formal Languages</p>
+          <button class="read-more">Read More</button>
+          <div class="desc">Automata Theory and Formal Languages presents the difficult concepts of automata theory in a straightforward manner, including discussions on diverse concepts and tools that play major roles in developing computing machines, algorithms and code.</div>
+        </article>
+
+        <article class="card">
+          <h3>HC 101</h3>
+          <p class="muted">Introduction to Human Computer Interaction</p>
+          <button class="read-more">Read More</button>
+          <div class="desc">HCI refers to both interaction and interface, encompassing the abstract model and the technological methodology. Its focus is on how to design interaction and implement interfaces for high usability. </div>
+        </article>
+
+        <article class="card">
+          <h3>CSE 3</h3>
+          <p class="muted">CS Elective III</p>
+          <button class="read-more">Read More</button>
+          <div class="desc">This subject is intended for students interested in the efficient use of modern parallel systems ranging from multi-core processors and many-core accelerators to large-scale distributed memory clusters.</div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p>© 2025 BSCSCS Journey • Built with HCI principles • 
+        <a href="#main" class="btn back-to-top">Back to top ↑</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Search filter
+    const searchInput = document.getElementById('search');
+    const subjectCards = document.querySelectorAll('#subjectGrid .card');
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      subjectCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+
+    // Read More / Show Less toggle
+    const buttons = document.querySelectorAll('.read-more');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const desc = btn.nextElementSibling;
+        const isVisible = desc.style.display === 'block';
+        desc.style.display = isVisible ? 'none' : 'block';
+        btn.textContent = isVisible ? 'Read More' : 'Show Less';
+      });
+    });
+  </script>
+</body>
+</html>

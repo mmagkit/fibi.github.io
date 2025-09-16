@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
+  <title>My CS Journey – Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">📘</div>
+        <a href="index.html" aria-label="Contact">Contact</a>
+      </div>
+      <button class="menu-btn" aria-controls="primary-nav" aria-expanded="false">☰ Menu</button>
+      <nav aria-label="Primary">
+        <div id="primary-nav" class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="subjects.html">Subjects</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="container">
+
+    <h1>Contact Me</h1>
+    <p class="muted">Have questions about my projects, skills, or CS journey? Feel free to reach out below 👇</p>
+
+    <section class="card">
+      <form id="contactForm" class="space-y">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" required placeholder="Your full name">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="your@email.com">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Send Message">
+        </div>
+        <p id="contactStatus" role="status" class="muted"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p>© 2025 My CS Journey • Built with HCI principles • 
+        <a href="#main" class="btn" style="background:rgba(0,0,0,.25)">Back to top ↑</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
